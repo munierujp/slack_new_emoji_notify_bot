@@ -1,0 +1,2 @@
+# slack_new_emoji_notify_bot
+Slackの新規絵文字を通知するBOT
