@@ -18,7 +18,7 @@ function doPost (e) {
 
     if (event.type === EVENT_TYPE_EMOJI_CHANGED && event.subtype === EVENT_SUB_TYPE_ADD) {
       var message = createMessage_(event)
-      postToSlack(message)
+      postToSlack_(message)
     }
   }
 }
@@ -40,7 +40,7 @@ function normalizeRequest_ (e) {
 * @return {TextOutput} TextOutputオブジェクト
 */
 function createTextOutput_ (text) {
-  return ContentService.createTextOutput_(text).setMimeType(ContentService.MimeType.TEXT)
+  return ContentService.createTextOutput(text).setMimeType(ContentService.MimeType.TEXT)
 }
 
 /**
