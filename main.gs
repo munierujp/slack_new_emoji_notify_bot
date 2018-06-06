@@ -51,7 +51,7 @@ function createTextOutput_ (text) {
 */
 function createMessage_ (event) {
   var name = event.name
-  return ':' + name + ': has added.'
+  return ':' + name + ': (' + name + ') has added.'
 }
 
 /**
