@@ -6,7 +6,7 @@ Slackの新規絵文字を通知するBOT
 ## プロパティ
 |プロパティ|説明|例|
 |---|---|---|
-|`MESSAGE_TEMPLATE`|メッセージのテンプレート|`:{{name}}: ({{name}}) has added on {{added}}`|
+|`MESSAGE_TEMPLATE`|メッセージのテンプレート|`:{{name}}: ({{name}}) has added on {{added}}.`|
 |`MESSAGE_TEMPLATE_ADDED_FORMAT`|メッセージのテンプレートの`added`のフォーマット|`YYYY[/]M[/]D H[:]mm[:]ss`|
 |`MESSAGE_TEMPLATE_DATE_LANG`|メッセージのテンプレートの日付の言語|`ja`|
 |`WEBHOOK_URL`|SlackのWebhook URL|`https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX`|
