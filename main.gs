@@ -1,4 +1,7 @@
 var properties = PropertiesService.getScriptProperties()
+var MESSAGE_TEMPLATE = properties.getProperty('MESSAGE_TEMPLATE')
+var MESSAGE_TEMPLATE_ADDED_FORMAT = properties.getProperty('MESSAGE_TEMPLATE_ADDED_FORMAT')
+var MESSAGE_TEMPLATE_DATE_LANG = properties.getProperty('MESSAGE_TEMPLATE_DATE_LANG')
 var WEBHOOK_URL = properties.getProperty('WEBHOOK_URL')
 
 var REQUEST_TYPE_URL_VERIFICATION = 'url_verification'
@@ -47,11 +50,32 @@ function createTextOutput_ (text) {
 * メッセージを作成します。
 * @param {Object} event - イベント
 * @param {string} event.name - イベントの名前
+* @param {string} event.value - イベントのURL
+* @param {string} event.event_ts - イベントのタイムスタンプ
 * @return {string} メッセージ
 */
 function createMessage_ (event) {
-  var name = event.name
-  return ':' + name + ': (' + name + ') has added.'
+  var replacers = [
+    [/{{name}}/g, event.name],
+    [/{{url}}/g, event.value],
+    [/{{added}}/g, Moment.moment(Number(event.event_ts) * 1000).format(MESSAGE_TEMPLATE_ADDED_FORMAT)]
+  ]
+  return replaceText_(MESSAGE_TEMPLATE, replacers)
+}
+
+/**
+* 文字列を複数の条件で置換します。
+* @param {string} source 文字列
+* @param {Object[][]} replacers 置換用配列
+* @return {string} 置換した文字列
+*/
+function replaceText_ (source, replacers) {
+  var replaced = source
+  for (var i in replacers) {
+    var replacer = replacers[i]
+    replaced = replaced.replace(replacer[0], replacer[1])
+  }
+  return replaced
 }
 
 /**
