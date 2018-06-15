@@ -18,7 +18,7 @@ Slackの新規絵文字を通知するBOT
 |---|---|---|
 |`{{name}}`|絵文字名|`picard_facepalm`|
 |`{{url}}`|絵文字のURL|`https://my.slack.com/emoji/picard_facepalm/db8e287430eaa459.gif`|
-|`{{added}}`|追加日持|`1361482916.000004`|
+|`{{added}}`|追加日持|`2013-02-21T21:41:56.000Z`|
 
 ### MESSAGE_TEMPLATE_DATE_LANG
 以下の言語を指定できます。  
