@@ -1,3 +1,5 @@
+var moment = Moment.moment
+
 var properties = PropertiesService.getScriptProperties()
 var MESSAGE_TEMPLATE = properties.getProperty('MESSAGE_TEMPLATE')
 var MESSAGE_TEMPLATE_ADDED_FORMAT = properties.getProperty('MESSAGE_TEMPLATE_ADDED_FORMAT')
@@ -58,7 +60,7 @@ function createMessage_ (event) {
   var replacers = [
     [/{{name}}/g, event.name],
     [/{{url}}/g, event.value],
-    [/{{added}}/g, Moment.moment(Number(event.event_ts) * 1000).format(MESSAGE_TEMPLATE_ADDED_FORMAT)]
+    [/{{added}}/g, moment(Number(event.event_ts) * 1000).format(MESSAGE_TEMPLATE_ADDED_FORMAT)]
   ]
   return replaceText_(MESSAGE_TEMPLATE, replacers)
 }
