@@ -57,27 +57,12 @@ function createTextOutput_ (text) {
 * @return {string} メッセージ
 */
 function createMessage_ (event) {
-  var replacers = [
-    [/{{name}}/g, event.name],
-    [/{{url}}/g, event.value],
-    [/{{added}}/g, moment(Number(event.event_ts) * 1000).format(MESSAGE_TEMPLATE_ADDED_FORMAT)]
-  ]
-  return replaceText_(MESSAGE_TEMPLATE, replacers)
-}
-
-/**
-* 文字列を複数の条件で置換します。
-* @param {string} source 文字列
-* @param {Object[][]} replacers 置換用配列
-* @return {string} 置換した文字列
-*/
-function replaceText_ (source, replacers) {
-  var replaced = source
-  for (var i in replacers) {
-    var replacer = replacers[i]
-    replaced = replaced.replace(replacer[0], replacer[1])
+  var data = {
+    name: event.name,
+    url: event.value,
+    added: moment(Number(event.event_ts) * 1000).format(MESSAGE_TEMPLATE_ADDED_FORMAT)
   }
-  return replaced
+  return Mustache.render(MESSAGE_TEMPLATE, data)
 }
 
 /**
