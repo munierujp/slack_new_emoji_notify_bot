@@ -29,7 +29,9 @@ Slackの新規絵文字を通知するBOT
 |`ja`|日本語|
 
 ## ライブラリ
-* Moment  
-`MHMchiX6c1bwSqGM1PZiW_PxhMjh3Sh48`
-* Mustache  
-`MoB1GsrPeNTPPX8SRqpw8QDVZgzu5bsVr`
+以下のライブラリを使用しています。
+
+|ライブラリ|プロジェクトキー|
+|---|---|
+|Moment|`MHMchiX6c1bwSqGM1PZiW_PxhMjh3Sh48`|
+|Mustache|`13re0EpD6XiVa5zHXndGiYtcH-QMnbeE5MJH190pJ8xCYhmuW5sX2ZO5R`|
