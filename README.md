@@ -7,18 +7,15 @@ Slackの新規絵文字を通知するBOT
 |プロパティ|説明|例|
 |---|---|---|
 |`MESSAGE_TEMPLATE`|メッセージのテンプレート|`:{{name}}: ({{name}}) has added on {{added}}.`|
-|`MESSAGE_TEMPLATE_ADDED_FORMAT`|メッセージのテンプレートの`added`のフォーマット|`YYYY[/]M[/]D H[:]mm[:]ss`|
+|`MESSAGE_TEMPLATE_DATE_FORMAT`|メッセージのテンプレートの日付のフォーマット|`YYYY[/]M[/]D H[:]mm[:]ss`|
 |`MESSAGE_TEMPLATE_DATE_LANG`|メッセージのテンプレートの日付の言語|`ja`|
 |`WEBHOOK_URL`|SlackのWebhook URL|`https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX`|
 
 ### MESSAGE_TEMPLATE
-以下の変数を用いて、[Mustache.js](https://github.com/janl/mustache.js/)の記法で書けます。
+[MESSAGE_TEMPLATE.md](MESSAGE_TEMPLATE.md)を参照してください。
 
-|変数|説明|例|
-|---|---|---|
-|`name`|絵文字名|`picard_facepalm`|
-|`url`|絵文字のURL|`https://my.slack.com/emoji/picard_facepalm/db8e287430eaa459.gif`|
-|`added`|追加日持|`2013-02-21T21:41:56.000Z`|
+### MESSAGE_TEMPLATE_DATE_FORMAT
+[Moment.js](https://momentjs.com/docs/#/displaying/format/)のフォーマットパターンを使用できます。
 
 ### MESSAGE_TEMPLATE_DATE_LANG
 以下の言語を指定できます。  
