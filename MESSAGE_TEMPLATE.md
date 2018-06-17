@@ -5,5 +5,5 @@
 |プロパティ|型|必須|説明|
 |---|---|---|---|
 |`name`|string|○|絵文字名|
-|`url`|string|○|絵文字のURL|
-|`added`|string|○|追加日持|
+|`value`|string|○|絵文字のURL|
+|`event_ts`|string|○|追加日持|
