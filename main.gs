@@ -51,18 +51,12 @@ function createTextOutput_ (text) {
 /**
 * メッセージを作成します。
 * @param {Object} event - イベント
-* @param {string} event.name - イベントの名前
-* @param {string} event.value - イベントのURL
 * @param {string} event.event_ts - イベントのタイムスタンプ
 * @return {string} メッセージ
 */
 function createMessage_ (event) {
-  var data = {
-    name: event.name,
-    url: event.value,
-    added: moment(Number(event.event_ts) * 1000).format(MESSAGE_TEMPLATE_DATE_FORMAT)
-  }
-  return Mustache.render(MESSAGE_TEMPLATE, data)
+  event.event_ts = moment(Number(event.event_ts) * 1000).format(MESSAGE_TEMPLATE_DATE_FORMAT)
+  return Mustache.render(MESSAGE_TEMPLATE, event)
 }
 
 /**
